@@ -1,0 +1,21 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+  security:
+    user:
+      name: ${EUREKA_USERNAME:eureka}
+      password: ${EUREKA_PASSWORD:password}
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false   # Eureka server doesn't register with itself
+    fetch-registry: false         # Doesn't need to fetch its own registry
+  server:
+    wait-time-in-ms-when-sync-empty: 0   # Faster startup in dev
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000  # 5s
