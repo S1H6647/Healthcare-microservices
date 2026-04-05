@@ -4,5 +4,6 @@ public enum UserStatus {
     PATIENT,
     DOCTOR,
     ADMIN,
-    PHARMACIST
+    PHARMACIST,
+    RECEPTIONIST
 }

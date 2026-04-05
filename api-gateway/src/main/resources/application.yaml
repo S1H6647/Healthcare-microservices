@@ -40,6 +40,16 @@ spring:
           predicates:
             - Path=/api/pharmacists/**
 
+        - id: receptionist-service-route
+          uri: lb://receptionist-service
+          predicates:
+            - Path=/api/receptionists/**
+
+        - id: prescription-service-route
+          uri: lb://prescription-service
+          predicates:
+            - Path=/api/prescriptions/**
+
 jwt:
   secret: V6fTF1MzMy9RZTvoV7x7VoVGLXmgtVXHUdMOAHyn6Wg=
 eureka:
