@@ -1,21 +1,21 @@
 server:
-  port: 8084
+  port: ${PORT:8084}
 
 spring:
   application:
     name: notification-service
 
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_PASSWORD:guest}
 
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: theonlymailsender@gmail.com
-    password: izzx fbud zdvk uuwi
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:theonlymailsender@gmail.com}
+    password: ${MAIL_PASSWORD:izzx fbud zdvk uuwi}
     properties:
       mail:
         smtp:
@@ -25,7 +25,7 @@ spring:
 
 app:
   mail:
-    from: theonlymailsender@gmail.com
+    from: ${MAIL_FROM:theonlymailsender@gmail.com}
 
 rabbit:
   exchange: healthcare.exchange
@@ -35,7 +35,7 @@ rabbit:
 eureka:
   client:
     service-url:
-      defaultZone: http://${EUREKA_USERNAME:eureka}:${EUREKA_PASSWORD:password}@localhost:8761/eureka/
+      defaultZone: ${EUREKA_URL:http://${EUREKA_USERNAME:eureka}:${EUREKA_PASSWORD:password}@localhost:8761/eureka/}
     registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
