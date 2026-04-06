@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl prescription-service -am -q
 
 COPY prescription-service/src prescription-service/src
 
-RUN ./mvnw package -pl prescription-service -am -DskipTests -q
+RUN ./mvnw package -pl prescription-service -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

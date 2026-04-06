@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl doctor-service -am -q
 
 COPY doctor-service/src doctor-service/src
 
-RUN ./mvnw package -pl doctor-service -am -DskipTests -q
+RUN ./mvnw package -pl doctor-service -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

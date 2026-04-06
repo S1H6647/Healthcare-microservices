@@ -21,9 +21,9 @@ COPY receptionist-service/pom.xml receptionist-service/pom.xml
 
 RUN ./mvnw dependency:go-offline -pl appointment-service -am -q
 
-COPY appointment-service/src appointment-service/src
+COPY src ./src
 
-RUN ./mvnw package -pl appointment-service -am -DskipTests -q
+RUN ./mvnw package -pl appointment-service -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

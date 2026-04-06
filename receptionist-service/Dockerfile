@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl receptionist-service -am -q
 
 COPY receptionist-service/src receptionist-service/src
 
-RUN ./mvnw package -pl receptionist-service -am -DskipTests -q
+RUN ./mvnw package -pl receptionist-service -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl auth-service -am -q
 
 COPY auth-service/src auth-service/src
 
-RUN ./mvnw package -pl auth-service -am -DskipTests -q
+RUN ./mvnw package -pl auth-service -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

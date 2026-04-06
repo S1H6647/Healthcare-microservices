@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl pharmacist-service -am -q
 
 COPY pharmacist-service/src pharmacist-service/src
 
-RUN ./mvnw package -pl pharmacist-service -am -DskipTests -q
+RUN ./mvnw package -pl pharmacist-service -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

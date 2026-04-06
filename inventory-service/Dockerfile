@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl inventory-service -am -q
 
 COPY inventory-service/src inventory-service/src
 
-RUN ./mvnw package -pl inventory-service -am -DskipTests -q
+RUN ./mvnw package -pl inventory-service -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

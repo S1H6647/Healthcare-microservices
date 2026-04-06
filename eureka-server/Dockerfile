@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl eureka-server -am -q
 
 COPY eureka-server/src eureka-server/src
 
-RUN ./mvnw package -pl eureka-server -am -DskipTests -q
+RUN ./mvnw package -pl eureka-server -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl notification-service -am -q
 
 COPY notification-service/src notification-service/src
 
-RUN ./mvnw package -pl notification-service -am -DskipTests -q
+RUN ./mvnw package -pl notification-service -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 

@@ -23,7 +23,7 @@ RUN ./mvnw dependency:go-offline -pl api-gateway -am -q
 
 COPY api-gateway/src api-gateway/src
 
-RUN ./mvnw package -pl api-gateway -am -DskipTests -q
+RUN ./mvnw package -pl api-gateway -am -Dmaven.test.skip=true -q
 
 FROM eclipse-temurin:21-jre-alpine
 
