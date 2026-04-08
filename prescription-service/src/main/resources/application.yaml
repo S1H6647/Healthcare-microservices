@@ -47,3 +47,8 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     operations-sorter: method
+
+services:
+  url:
+    doctor-service: ${DOCTOR_SERVICE_URL:http://localhost:8082}
+    inventory-service: ${INVENTORY_SERVICE_URL:http://localhost:8087}

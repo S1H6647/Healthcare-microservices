@@ -6,16 +6,13 @@ spring:
     name: notification-service
 
   rabbitmq:
-    host: ${RABBIT_HOST:localhost}
-    port: ${RABBIT_PORT:5672}
-    username: ${RABBIT_USERNAME:guest}
-    password: ${RABBIT_PASSWORD:guest}
+    uri: ${RABBITMQ_URI:amqp://guest:guest@localhost:5672/}
 
   mail:
     host: ${MAIL_HOST:smtp.gmail.com}
     port: ${MAIL_PORT:587}
-    username: ${MAIL_USERNAME:theonlymailsender@gmail.com}
-    password: ${MAIL_PASSWORD:izzx fbud zdvk uuwi}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -25,7 +22,7 @@ spring:
 
 app:
   mail:
-    from: ${MAIL_FROM:theonlymailsender@gmail.com}
+    from: ${MAIL_FROM}
 
 rabbit:
   exchange: healthcare.exchange

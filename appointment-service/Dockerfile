@@ -21,7 +21,7 @@ COPY receptionist-service/pom.xml receptionist-service/pom.xml
 
 RUN ./mvnw dependency:go-offline -pl appointment-service -am -q
 
-COPY src ./src
+COPY appointment-service/src appointment-service/src
 
 RUN ./mvnw package -pl appointment-service -am -Dmaven.test.skip=true -q
 

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
         name = "patient-service",
+        url = "${services.url.patient-service:http://localhost:8081}",
         fallback = PatientClientFallback.class
 )
 public interface PatientClient {

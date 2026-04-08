@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 @FeignClient(
         name = "doctor-service",
+        url = "${services.url.doctor-service:http://localhost:8082}",
         fallback = DoctorClientFallback.class
 )
 public interface DoctorClient {

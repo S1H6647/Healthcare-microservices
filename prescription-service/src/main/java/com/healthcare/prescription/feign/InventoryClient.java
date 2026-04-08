@@ -10,6 +10,7 @@ import java.util.List;
 
 @FeignClient(
         name = "inventory-service",
+        url = "${services.url.inventory-service:http://localhost:8087}",
         fallback = InventoryClientFallback.class
 )
 public interface InventoryClient {

@@ -53,6 +53,6 @@ springdoc:
     operations-sorter: method
 
 cloudinary:
-  cloud-name: ${CLOUDINARY_CLOUD_NAME:dlpanigdn}
-  api-key: ${CLOUDINARY_API_KEY:264646622641331}
-  api-secret: ${CLOUDINARY_API_SECRET:IUh2fYOKpVYT5lRYj3zrF4JHZmM}
+  cloud-name: ${CLOUDINARY_CLOUD_NAME}
+  api-key: ${CLOUDINARY_API_KEY}
+  api-secret: ${CLOUDINARY_API_SECRET}
