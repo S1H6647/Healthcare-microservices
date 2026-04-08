@@ -11,47 +11,47 @@ spring:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
       routes:
         - id: auth-service-route
-          uri: lb://auth-service
+          uri: ${AUTH_SERVICE_URL:lb://auth-service}
           predicates:
             - Path=/api/auth/**
 
         - id: patient-service-route
-          uri: lb://patient-service
+          uri: ${PATIENT_SERVICE_URL:lb://patient-service}
           predicates:
             - Path=/api/patients/**
 
         - id: doctor-service-route
-          uri: lb://doctor-service
+          uri: ${DOCTOR_SERVICE_URL:lb://doctor-service}
           predicates:
             - Path=/api/doctors/**
 
         - id: appointment-service-route
-          uri: lb://appointment-service
+          uri: ${APPOINTMENT_SERVICE_URL:lb://appointment-service}
           predicates:
             - Path=/api/appointments/**
 
         - id: inventory-service-route
-          uri: lb://inventory-service
+          uri: ${INVENTORY_SERVICE_URL:lb://inventory-service}
           predicates:
             - Path=/api/medicines/**
 
         - id: pharmacist-service-route
-          uri: lb://pharmacist-service
+          uri: ${PHARMACIST_SERVICE_URL:lb://pharmacist-service}
           predicates:
             - Path=/api/pharmacists/**
 
         - id: receptionist-service-route
-          uri: lb://receptionist-service
+          uri: ${RECEPTIONIST_SERVICE_URL:lb://receptionist-service}
           predicates:
             - Path=/api/receptionists/**
 
         - id: prescription-service-route
-          uri: lb://prescription-service
+          uri: ${PRESCRIPTION_SERVICE_URL:lb://prescription-service}
           predicates:
             - Path=/api/prescriptions/**
 
 jwt:
-  secret: ${JWT_SECRET:V6fTF1MzMy9RZTvoV7x7VoVGLXmgtVXHUdMOAHyn6Wg=}
+  secret: ${JWT_SECRET}
 eureka:
   client:
     service-url:
