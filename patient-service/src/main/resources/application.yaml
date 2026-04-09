@@ -10,6 +10,13 @@ spring:
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD:076493}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 3
+      connection-timeout: 30000
+      idle-timeout: 180000
+      max-lifetime: 240000
+      keepalive-time: 60000
 
   jpa:
     open-in-view: false
@@ -19,13 +26,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
-    datasource:
-      hikari:
-        connection-timeout: 30000
-        minimum-idle: 1        # ← don't keep multiple idle connections on free tier
-        maximum-pool-size: 3   # ← Neon free tier has connection limits
-        idle-timeout: 600000
-        max-lifetime: 1800000
 
   flyway:
     enabled: true
